@@ -14,7 +14,10 @@ class DmozSpider(scrapy.Spider):
     # root_url = 'http://zaodich.webtretho.com/forum/f2923/'
 
     # f3499
-    root_url = 'http://www.webtretho.com/forum/f3499/'
+    # root_url = 'http://www.webtretho.com/forum/f3499/'
+
+    # f630
+    root_url = 'http://www.webtretho.com/forum/f630/'
 
     start_urls = []
 
@@ -29,7 +32,10 @@ class DmozSpider(scrapy.Spider):
     # for i in range(0, 236):
 
     # f3499
-    for i in range(0, 17):
+    # for i in range(0, 17):
+
+    # f630
+    for i in range(0, 146):
         url = root_url + 'index' + str(i) + '.html'
         start_urls.append(url)
 
@@ -53,7 +59,7 @@ class DmozSpider(scrapy.Spider):
                     body = body + x
 
             # print body
-            length = len(sel.xpath('blockquote[@class="postcontent restore"]/text()').extract()[1])
+            length = len(body)
             # length = len(arr)
             if 10 < length < 5000:
                 item = DmozItem()
