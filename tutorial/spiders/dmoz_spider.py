@@ -34,8 +34,14 @@ class DmozSpider(scrapy.Spider):
     # f3499
     # for i in range(0, 17):
 
+    # f2484
+    # root_url = 'http://zaodich.webtretho.com/forum/f2484/'
+
     # f630
     for i in range(0, 146):
+
+    # f2484
+    # for i in range(0, 100):
         url = root_url + 'index' + str(i) + '.html'
         start_urls.append(url)
 
